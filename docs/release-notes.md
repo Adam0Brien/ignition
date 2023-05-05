@@ -19,6 +19,7 @@ Starting with this release, ignition-validate binaries are signed with the
 
 - Clarify spec terminology for contents of CA bundles, files, and key files
 - Improve rendering of spec docs on docs site
+- Fix relabling mountpoints which already exist
 
 ### Bug fixes
 

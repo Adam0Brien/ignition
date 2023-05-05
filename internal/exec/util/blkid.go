@@ -69,6 +69,7 @@ type FilesystemInfo struct {
 	Type  string
 	UUID  string
 	Label string
+	Permissions int
 }
 
 // If allowAmbivalent is false, fail if we find traces of more than one

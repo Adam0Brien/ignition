@@ -84,3 +84,13 @@ func (ut Util) RelabelFiles(patterns []string) error {
 	}
 	return nil
 }
+
+func FileSystemIsReadOnly(path string) bool {
+	//open file for writing only
+	file, err := os.OpenFile(path, os.O_WRONLY, 0666)
+	if err != nil {
+		return os.IsPermission(err)
+	}
+	defer file.Close()
+	return false
+}

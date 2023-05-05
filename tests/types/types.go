@@ -78,6 +78,7 @@ type Partition struct {
 	FilesystemLabel string
 	FilesystemUUID  string
 	FilesystemImage string // base64-encoded bzip2
+	FilesystemMode  int
 	MountPath       string
 	Hybrid          bool
 	Ambivalent      bool // allow multiple FS types on validation

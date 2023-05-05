@@ -141,6 +141,10 @@ func (s stage) mountFs(fs types.Filesystem) error {
 	} else if err != nil {
 		return err
 	}
+	isReadOnly := util.FileSystemIsReadOnly(path)
+	if isReadOnly {
+		fmt.Println("File system is read-only")
+	} else {
 
 	if distro.SelinuxRelabel() {
 		if err := s.RelabelFiles([]string{firstMissing}); err != nil {
@@ -166,6 +170,7 @@ func (s stage) mountFs(fs types.Filesystem) error {
 			}
 		}
 	}
+}
 
 	return nil
 }
